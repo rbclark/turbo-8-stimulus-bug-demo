@@ -2,6 +2,8 @@
 
 This repo is intended to demonstrate two issues that I've been encountering when using Turbo 8 + Stimulus. The issues can be found here:
 
+https://github.com/hotwired/turbo/issues/1209
+https://github.com/hotwired/turbo/issues/1210
 
 
 ### Running this repository

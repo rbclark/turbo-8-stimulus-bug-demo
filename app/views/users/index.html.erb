@@ -1,6 +1,8 @@
 <% turbo_refreshes_with method: :morph, scroll: :preserve %>
 <%= turbo_stream_from @group %>
 
+<div data-controller="connected"></div>
+
 <table class="min-w-full leading-normal">
   <thead>
     <tr>
