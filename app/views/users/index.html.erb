@@ -1,0 +1,29 @@
+<% turbo_refreshes_with method: :morph, scroll: :preserve %>
+<%= turbo_stream_from @group %>
+
+<table class="min-w-full leading-normal">
+  <thead>
+    <tr>
+      <% ['name', 'email', 'created_at'].each do |column| %>
+        <th class="px-5 py-3 bg-gray-600 text-left text-xs font-semibold text-gray-100 uppercase tracking-wider">
+          <%= link_to column.titleize, group_users_path(group: @group, sort: column, direction: next_direction(column)) %>
+        </th>
+      <% end %>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+          <%= user.name %>
+        </td>
+        <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+          <%= user.email %>
+        </td>
+        <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+          <%= user.created_at.strftime("%Y-%m-%d") %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
